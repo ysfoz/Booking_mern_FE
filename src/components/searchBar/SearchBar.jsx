@@ -43,7 +43,10 @@ const SearchBar = () => {
       </ButtonContainer>
       <ButtonContainer>
       <FontAwesomeIcon icon={faCalendarDays} />
-        <DateBox onClick={() => setOpenDate(!openDate)}>{`${format(
+        <DateBox onClick={() => {
+            setOpenDate(prev => !prev)
+            setOpenOption(false)
+        }}>{`${format(
           date[0].startDate,
           "dd/MM/yyyy"
         )} to ${format(date[0].endDate, "dd/MM/yyyy")}`}</DateBox>
@@ -59,7 +62,10 @@ const SearchBar = () => {
       </ButtonContainer>
       <ButtonContainer>
       <FontAwesomeIcon icon={faPerson} />
-        <DateBox onClick={()=> setOpenOption(p => !p)}> {`${options.adult} Adult ${options.children} Children ${options.rooms} Rooms`} </DateBox>
+        <DateBox onClick={()=> { 
+            setOpenOption(p => !p)
+            setOpenDate(false)
+            }}> {`${options.adult} Adult ${options.children} Children ${options.rooms} Rooms`} </DateBox>
         {openOption && <OptionBox options = {options} setOptions={setOptions}/>}
       </ButtonContainer>
       <ButtonContainer>

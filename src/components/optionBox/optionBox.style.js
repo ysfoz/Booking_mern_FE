@@ -20,14 +20,14 @@ const ItemBox = styled.div`
   align-items: center;
   font-size: 12px;
 `;
-const Item = styled.span``;
+const Item = styled.span`
+`;
 const Count = styled.span`
   width: 20px;
   text-align: center;
 `;
 const ButtonBox = styled.div`
   display: flex;
-
   align-items: center;
 `;
 const Button = styled.button`
@@ -35,6 +35,10 @@ const Button = styled.button`
   height: 30px;
   border: 1px solid #003580;
   background-color: #fff;
+  cursor:  pointer;
+  :disabled{
+    cursor: no-drop;
+  }
 `;
 
 export { Container, Item, ItemBox, Button, ButtonBox, Count };

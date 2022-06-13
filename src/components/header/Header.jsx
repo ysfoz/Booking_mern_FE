@@ -1,5 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBed, faCar, faPlane, faTaxi } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBed,
+  faCar,
+  faPlane,
+  faTaxi,
+} from "@fortawesome/free-solid-svg-icons";
 import SearchBar from "../searchBar/SearchBar";
 import {
   Wrapper,
@@ -10,10 +15,10 @@ import {
   Title,
   TitleContainer,
   Desc,
-  AccountButton
+  AccountButton,
 } from "./header.style";
 
-const Header = () => {
+const Header = ({list}) => {
   return (
     <Wrapper>
       <Container>
@@ -39,17 +44,15 @@ const Header = () => {
             <Button>Airport Taxi</Button>
           </ButtonBox>
         </ButtonContainer>
-        <TitleContainer>
-
-        <Title>
-          A Lifetime of discounts ? It's Genius.
-        </Title>
-        <Desc>
-          Get rewarded for your travels -unlock instant savings of 10% or ore with a free booking account. 
-        </Desc>
+        {!list && <><TitleContainer>
+          <Title>A Lifetime of discounts ? It's Genius.</Title>
+          <Desc>
+            Get rewarded for your travels -unlock instant savings of 10% or ore
+            with a free booking account.
+          </Desc>
         </TitleContainer>
         <AccountButton>Register/Sign in</AccountButton>
-        <SearchBar/>
+        <SearchBar /></>}
       </Container>
     </Wrapper>
   );
