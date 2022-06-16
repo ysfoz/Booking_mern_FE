@@ -23,6 +23,7 @@ const Button = styled.button`
   padding: 5px 10px;
   color: #003580;
   cursor: pointer;
+  border: none;
 `;
 const ButtonContainer = styled.div``;
 

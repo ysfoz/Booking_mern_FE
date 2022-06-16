@@ -35,7 +35,7 @@ const DateBox = styled.span`
 
 const SearchButton = styled.button`
 border:none;
-background-color: blueviolet;
+background-color: #0071c2;
 color: white;
 padding: 7px;
 border-radius: 2px;

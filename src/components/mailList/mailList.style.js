@@ -31,7 +31,7 @@ const Mail = styled.input`
 `;
 const Button = styled.button`
   border: none;
-  background-color: blueviolet;
+  background-color: #0071c2;
   color: #fff;
   font-weight: 200;
   padding: 5px 15px;
