@@ -30,6 +30,7 @@ const DateBox = styled.span`
   color: lightgray;
   margin-left: 10px;
   cursor: pointer;
+  
 `;
 
 const SearchButton = styled.button`

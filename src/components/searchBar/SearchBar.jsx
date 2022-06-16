@@ -7,9 +7,11 @@ import {
   SearchButton,
 } from "./searchBar.style";
 
-
-
-import { faBed, faCalendarDays, faPerson } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBed,
+  faCalendarDays,
+  faPerson,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DateRange } from "react-date-range";
 import { format } from "date-fns";
@@ -29,11 +31,11 @@ const SearchBar = () => {
       key: "selection",
     },
   ]);
-  const [options,setOptions] = useState({
-    adult:1,
-    children:0,
-    rooms:1
-  })
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    rooms: 1,
+  });
 
   return (
     <Wrapper>
@@ -42,14 +44,16 @@ const SearchBar = () => {
         <City placeholder="Where want to go" />
       </ButtonContainer>
       <ButtonContainer>
-      <FontAwesomeIcon icon={faCalendarDays} />
-        <DateBox onClick={() => {
-            setOpenDate(prev => !prev)
-            setOpenOption(false)
-        }}>{`${format(
-          date[0].startDate,
+        <FontAwesomeIcon icon={faCalendarDays} />
+        <DateBox
+          onClick={() => {
+            setOpenDate((prev) => !prev);
+            setOpenOption(false);
+          }}
+        >{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
+          date[0].endDate,
           "dd/MM/yyyy"
-        )} to ${format(date[0].endDate, "dd/MM/yyyy")}`}</DateBox>
+        )}`}</DateBox>
         {openDate && (
           <DateRange
             editableDateInputs={true}
@@ -61,15 +65,20 @@ const SearchBar = () => {
         )}
       </ButtonContainer>
       <ButtonContainer>
-      <FontAwesomeIcon icon={faPerson} />
-        <DateBox onClick={()=> { 
-            setOpenOption(p => !p)
-            setOpenDate(false)
-            }}> {`${options.adult} Adult ${options.children} Children ${options.rooms} Rooms`} </DateBox>
-        {openOption && <OptionBox options = {options} setOptions={setOptions}/>}
+        <FontAwesomeIcon icon={faPerson} />
+        <DateBox
+          onClick={() => {
+            setOpenOption((p) => !p);
+            setOpenDate(false);
+          }}
+        >
+          {" "}
+          {`${options.adult} Adult ${options.children} Children ${options.rooms} Rooms`}{" "}
+        </DateBox>
+        {openOption && <OptionBox options={options} setOptions={setOptions} />}
       </ButtonContainer>
       <ButtonContainer>
-        <SearchButton >Search</SearchButton>
+        <SearchButton>Search</SearchButton>
       </ButtonContainer>
     </Wrapper>
   );

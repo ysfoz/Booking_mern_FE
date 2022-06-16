@@ -11,6 +11,8 @@ const Container = styled.div`
   border-radius: 6px;
   justify-content: center;
   color: black;
+  z-index: 2;
+  background-color: #fff;
 `;
 const ItemBox = styled.div`
   display: flex;
