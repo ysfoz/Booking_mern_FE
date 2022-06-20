@@ -1,23 +1,35 @@
-import Navbar from "../../components/navbar/Navbar"
-import Header from "../../components/header/Header"
-import { Container } from "./list.style"
-import SearchBox from "../../components/searchBox/SearchBox"
-import SearchItem from "../../components/searchItem/SearchItem"
-
+import Navbar from "../../components/navbar/Navbar";
+import Header from "../../components/header/Header";
+import { Container, Wrapper } from "./list.style";
+import SearchBox from "../../components/searchBox/SearchBox";
+import SearchItem from "../../components/searchItem/SearchItem";
 
 const List = () => {
   return (
-    <div >
-      <Navbar/>
-      <Header list/>
+    <>
+      <Navbar />
+      <Header list />
 
       <Container>
-        <SearchBox/>
-        <SearchItem/>
+        <SearchBox />
+        <Wrapper>
 
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        <SearchItem />
+        </Wrapper>
       </Container>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default List
+export default List;

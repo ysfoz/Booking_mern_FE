@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 const Container = styled.div`
   background-color: #febb02;
-  padding: 10px;
+  padding: 12px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+  height: fit-content;
 `;
 
 const Search = styled.h2`
@@ -26,7 +27,7 @@ const Titel = styled.label`
 
 const DestinationandDate = styled.input`
   padding: 7px;
-  width: 250px;
+  width: 220px;
 `;
 
 const OptionsContainer = styled.div`

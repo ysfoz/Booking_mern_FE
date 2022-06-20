@@ -27,11 +27,11 @@ const SearchBox = () => {
         <Options>Options</Options>
         <InputsContainer>
           <Titel>Min price per night</Titel>
-          <OptionsInput type={"number"} />
+          <OptionsInput type={"number"} min={1} />
         </InputsContainer>
         <InputsContainer>
           <Titel>Max price per night</Titel>
-          <OptionsInput type={"number"} />
+          <OptionsInput type={"number"}  min={1}/>
         </InputsContainer>
         <InputsContainer>
           <Titel>Adult</Titel>
