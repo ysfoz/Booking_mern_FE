@@ -26,7 +26,7 @@ const Mail = styled.input`
   padding: 3px 10px;
   width: 300px;
   height: 30px;
-  border:none;
+  border: none;
   border-radius: 3px;
 `;
 const Button = styled.button`

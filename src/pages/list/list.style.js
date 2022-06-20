@@ -8,14 +8,12 @@ const Container = styled.div`
   margin: auto auto;
   margin-top: 50px;
   margin-bottom: 50px;
-
 `;
 
 const Wrapper = styled.div`
-display: flex;
-flex-direction: column;
-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
 
-`
-
-export { Container,Wrapper };
+export { Container, Wrapper };

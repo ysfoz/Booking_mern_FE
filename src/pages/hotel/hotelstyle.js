@@ -85,31 +85,25 @@ const Detail = styled.p`
 `;
 
 const PriceContainer = styled.div`
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
   flex: 1;
   background-color: lightblue;
   padding: 10px;
   gap: 10px;
 `;
 
-const PriceWrapper = styled.div`
-
-`
+const PriceWrapper = styled.div``;
 const Price = styled.span`
   font-weight: 700;
   margin-right: 10px;
- 
 `;
 const PriceDetail = styled.span`
   font-weight: 300;
-
-  
 `;
 
-
 const SliderContainer = styled.div`
-position: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -119,18 +113,14 @@ position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
- 
-
-`
+`;
 const SliderWrapper = styled.div`
-
-width: 70%;
-height: 70%;
-display: flex;
-align-items: center;
-justify-content: space-between;
-
-`
+  width: 70%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 export {
   FooterContainer,
@@ -152,5 +142,5 @@ export {
   PriceDetail,
   PriceWrapper,
   SliderContainer,
-  SliderWrapper
+  SliderWrapper,
 };

@@ -15,11 +15,11 @@ const Home = () => {
       <ListContainer>
         <Featured />
         <Title>Browse by property type</Title>
-        <PropertyList/>
+        <PropertyList />
         <Title>Homes guests love</Title>
-        <FeaturedProperties/>
-        <MailList/>
-        <Footer/>
+        <FeaturedProperties />
+        <MailList />
+        <Footer />
       </ListContainer>
     </>
   );

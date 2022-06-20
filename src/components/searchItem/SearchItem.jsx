@@ -12,7 +12,8 @@ import {
   Review,
   SubInfo,
   Button,
-  ReviewContainer,AvailableContainer
+  ReviewContainer,
+  AvailableContainer,
 } from "./searchItem.style";
 
 const SearchItem = () => {
@@ -34,26 +35,14 @@ const SearchItem = () => {
       </InfoContainer>
       <PriceContainer>
         <ReviewContainer>
-
-        <Review>
-          Excellent
-        </Review>
-        <Punkt>
-          8.9
-        </Punkt>
+          <Review>Excellent</Review>
+          <Punkt>8.9</Punkt>
         </ReviewContainer>
         <AvailableContainer>
+          <Price>$112</Price>
+          <SubInfo>Includes taxes and fees</SubInfo>
 
-        <Price>
-          $112
-        </Price>
-        <SubInfo>
-          Includes taxes and fees
-        </SubInfo>
-
-        <Button>
-          See Availability
-        </Button>
+          <Button>See Availability</Button>
         </AvailableContainer>
       </PriceContainer>
     </Container>

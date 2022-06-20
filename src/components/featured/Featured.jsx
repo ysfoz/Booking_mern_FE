@@ -8,7 +8,6 @@ import {
   Wrapper,
 } from "./featured.style";
 
-
 const Featured = () => {
   return (
     <Container>

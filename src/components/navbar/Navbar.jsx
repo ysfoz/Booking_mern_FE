@@ -7,7 +7,6 @@ import {
   ButtonContainer,
 } from "./navbar.style";
 
-
 const Navbar = () => {
   return (
     <Wrapper>

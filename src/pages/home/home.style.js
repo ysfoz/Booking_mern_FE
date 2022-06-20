@@ -10,8 +10,6 @@ const ListContainer = styled.div`
 
 const Title = styled.h3`
 width: 1024px;
-
-
 `
 
 export { ListContainer,Title };

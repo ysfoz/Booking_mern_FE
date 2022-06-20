@@ -51,16 +51,16 @@ const Desc = styled.span`
 `;
 
 const AccountButton = styled.button`
-border:none;
-cursor: pointer;
-background-color:#0071c2 ;
-display: flex;
-color: white;
-margin: 40px 0px;
-padding: 6px;
-width: 120px;
-justify-content: center;
-`
+  border: none;
+  cursor: pointer;
+  background-color: #0071c2;
+  display: flex;
+  color: white;
+  margin: 40px 0px;
+  padding: 6px;
+  width: 120px;
+  justify-content: center;
+`;
 
 export {
   Wrapper,
@@ -71,5 +71,5 @@ export {
   Title,
   TitleContainer,
   Desc,
-  AccountButton
+  AccountButton,
 };

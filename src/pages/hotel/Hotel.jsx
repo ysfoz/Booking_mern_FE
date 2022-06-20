@@ -60,19 +60,19 @@ const Hotel = () => {
   ];
 
   const handleModal = (index) => {
-    setOpen(true)
-    setSlideIndex(index)
-  }
+    setOpen(true);
+    setSlideIndex(index);
+  };
 
-  const handleChange = (direction) =>{
+  const handleChange = (direction) => {
     let slideNumber;
-    if (direction ==="l") {
-      slideNumber = slideIndex === 0 ? 5 : slideIndex - 1
+    if (direction === "l") {
+      slideNumber = slideIndex === 0 ? 5 : slideIndex - 1;
     } else {
-      slideNumber = slideIndex === 5 ? 0 : slideIndex + 1
+      slideNumber = slideIndex === 5 ? 0 : slideIndex + 1;
     }
-    setSlideIndex(slideNumber)
-  }
+    setSlideIndex(slideNumber);
+  };
   return (
     <>
       <Navbar />
@@ -100,20 +100,32 @@ const Hotel = () => {
         <ImageContainer>
           {open && (
             <SliderContainer>
-              <FontAwesomeIcon icon={faCircleXmark} className="close" onClick={()=> setOpen(false)} />
+              <FontAwesomeIcon
+                icon={faCircleXmark}
+                className="close"
+                onClick={() => setOpen(false)}
+              />
               <SliderWrapper>
-                <FontAwesomeIcon icon={faCircleArrowLeft} className="arrow" onClick={()=>handleChange("l")} />
+                <FontAwesomeIcon
+                  icon={faCircleArrowLeft}
+                  className="arrow"
+                  onClick={() => handleChange("l")}
+                />
                 <Image
                   style={{ width: "90%", height: "100%" }}
                   src={photos[slideIndex].src}
                 />
-                <FontAwesomeIcon icon={faCircleArrowRight} className="arrow" onClick={()=>handleChange("r")} />
+                <FontAwesomeIcon
+                  icon={faCircleArrowRight}
+                  className="arrow"
+                  onClick={() => handleChange("r")}
+                />
               </SliderWrapper>
             </SliderContainer>
           )}
 
-          {photos.map((image,index) => (
-            <Image src={image.src} onClick={()=>handleModal(index)}/>
+          {photos.map((image, index) => (
+            <Image src={image.src} onClick={() => handleModal(index)} />
           ))}
         </ImageContainer>
         <BottomContainer>

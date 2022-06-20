@@ -18,7 +18,7 @@ import {
   AccountButton,
 } from "./header.style";
 
-const Header = ({list}) => {
+const Header = ({ list }) => {
   return (
     <Wrapper>
       <Container>
@@ -44,15 +44,19 @@ const Header = ({list}) => {
             <Button>Airport Taxi</Button>
           </ButtonBox>
         </ButtonContainer>
-        {!list && <><TitleContainer>
-          <Title>A Lifetime of discounts ? It's Genius.</Title>
-          <Desc>
-            Get rewarded for your travels -unlock instant savings of 10% or ore
-            with a free booking account.
-          </Desc>
-        </TitleContainer>
-        <AccountButton>Register/Sign in</AccountButton>
-        <SearchBar /></>}
+        {!list && (
+          <>
+            <TitleContainer>
+              <Title>A Lifetime of discounts ? It's Genius.</Title>
+              <Desc>
+                Get rewarded for your travels -unlock instant savings of 10% or
+                ore with a free booking account.
+              </Desc>
+            </TitleContainer>
+            <AccountButton>Register/Sign in</AccountButton>
+            <SearchBar />
+          </>
+        )}
       </Container>
     </Wrapper>
   );
