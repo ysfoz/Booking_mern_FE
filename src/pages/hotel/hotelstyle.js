@@ -103,8 +103,34 @@ const Price = styled.span`
 `;
 const PriceDetail = styled.span`
   font-weight: 300;
+
   
 `;
+
+
+const SliderContainer = styled.div`
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.613);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+
+`
+const SliderWrapper = styled.div`
+
+width: 70%;
+height: 70%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+`
 
 export {
   FooterContainer,
@@ -124,5 +150,7 @@ export {
   PriceContainer,
   Price,
   PriceDetail,
-  PriceWrapper
+  PriceWrapper,
+  SliderContainer,
+  SliderWrapper
 };

@@ -1,0 +1,14 @@
+.close{
+    position: fixed;
+    top: 80px;
+    right: 150px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+.arrow{
+cursor: pointer;
+    font-size: 40px;
+    color: white;
+}
