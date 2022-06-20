@@ -9,7 +9,7 @@ import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Header />
       <ListContainer>
@@ -21,7 +21,7 @@ const Home = () => {
         <MailList/>
         <Footer/>
       </ListContainer>
-    </div>
+    </>
   );
 };
 

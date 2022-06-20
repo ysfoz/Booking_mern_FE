@@ -7,6 +7,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
+  position: sticky;
+  top: 10px;
 `;
 
 const Search = styled.h2`

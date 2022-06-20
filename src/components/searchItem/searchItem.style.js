@@ -54,50 +54,46 @@ const PriceContainer = styled.div`
   justify-content: space-between;
 `;
 const ReviewContainer = styled.div`
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 `;
 const AvailableContainer = styled.div`
-display: flex;
-gap: 10px;
-flex-direction: column;
-align-items: flex-end;
- 
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-end;
 `;
-
-
 
 const Review = styled.span`
-font-weight: 600;
-
+  font-weight: 600;
 `;
 const Punkt = styled.span`
-font-weight: 600;
-background-color:  #003580;
-padding: 5px;
-color: white;
-font-size: 14px;
+  font-weight: 600;
+  background-color: #003580;
+  padding: 5px;
+  color: white;
+  font-size: 14px;
 `;
 
 const Button = styled.button`
-border: none;
-padding: 8px;
-background-color: #0071c2 ;
-color: white;
-font-weight: 600;
-border-radius: 5px;
-width: 100%;
+  border: none;
+  padding: 8px;
+  background-color: #0071c2;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
 `;
 const SubInfo = styled.h6`
-color: gray;
-font-size: 12px;
-font-weight: 400;
-
+  color: gray;
+  font-size: 12px;
+  font-weight: 400;
 `;
 
 const Price = styled.h3`
-font-weight: 400;
-font-size: 22px;
+  font-weight: 400;
+  font-size: 22px;
 `;
 
 export {
@@ -114,5 +110,5 @@ export {
   Button,
   SubInfo,
   ReviewContainer,
-  AvailableContainer
+  AvailableContainer,
 };
