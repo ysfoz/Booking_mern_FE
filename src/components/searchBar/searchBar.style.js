@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DateRange } from "react-date-range";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -8,37 +9,47 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: #ffb300 solid 2px ;
+  border: #ffb300 solid 2px;
   padding: 5px;
   position: absolute;
   bottom: -25px;
-
-
 `;
 const ButtonContainer = styled.div`
   color: lightgray;
   position: relative;
 `;
 const City = styled.input`
-margin-left: 10px;
-border: none;
-padding: 4px;
-
+  margin-left: 10px;
+  border: none;
+  padding: 4px;
 `;
 const DateBox = styled.span`
   color: black;
   color: lightgray;
   margin-left: 10px;
   cursor: pointer;
-  
 `;
 
 const SearchButton = styled.button`
-border:none;
-background-color: #0071c2;
-color: white;
-padding: 7px;
-border-radius: 2px;
+  border: none;
+  background-color: #0071c2;
+  color: white;
+  padding: 7px;
+  border-radius: 2px;
 `;
 
-export {  Wrapper, ButtonContainer, SearchButton, DateBox, City };
+const StyledDateRange = styled(DateRange)`
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 2;
+`;
+
+export {
+  Wrapper,
+  ButtonContainer,
+  SearchButton,
+  DateBox,
+  City,
+  StyledDateRange,
+};

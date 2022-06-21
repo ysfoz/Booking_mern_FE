@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 50px;
@@ -27,4 +28,9 @@ const Button = styled.button`
 `;
 const ButtonContainer = styled.div``;
 
-export { Wrapper, Container, Logo, Button, ButtonContainer };
+const StyledLink = styled(Link)`
+text-decoration: none;
+color: inherit;
+`
+
+export { Wrapper, Container, Logo, Button, ButtonContainer,StyledLink };

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const FooterContainer = styled.div`
   margin-top: 50px;
@@ -122,6 +123,21 @@ const SliderWrapper = styled.div`
   justify-content: space-between;
 `;
 
+const ArrowIcon = styled(FontAwesomeIcon)`
+  cursor: pointer;
+  font-size: 40px;
+  color: white;
+`;
+
+const CloseIcon = styled(FontAwesomeIcon)`
+  position: fixed;
+  top: 80px;
+  right: 150px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+`;
+
 export {
   FooterContainer,
   Container,
@@ -143,4 +159,6 @@ export {
   PriceWrapper,
   SliderContainer,
   SliderWrapper,
+  ArrowIcon,
+  CloseIcon
 };

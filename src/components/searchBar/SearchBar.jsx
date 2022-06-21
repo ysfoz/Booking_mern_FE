@@ -5,6 +5,7 @@ import {
   City,
   DateBox,
   SearchButton,
+  StyledDateRange,
 } from "./searchBar.style";
 
 import {
@@ -13,12 +14,10 @@ import {
   faPerson,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { DateRange } from "react-date-range";
 import { format } from "date-fns";
 
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import "./dateRange.css";
 import OptionBox from "../optionBox/OptionBox";
 
 const SearchBar = () => {
@@ -55,7 +54,7 @@ const SearchBar = () => {
           "dd/MM/yyyy"
         )}`}</DateBox>
         {openDate && (
-          <DateRange
+          <StyledDateRange
             editableDateInputs={true}
             onChange={(item) => setDate([item.selection])}
             moveRangeOnFirstSelection={false}

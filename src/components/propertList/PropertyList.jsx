@@ -31,7 +31,6 @@ const PropertyList = () => {
                 <Image src={image} />
                 <TitleContainer>
                   <Title>{data[index]?.type}</Title>
-
                   <SubTitle>
                     {data[index]?.count} {data[index]?.type}s
                   </SubTitle>

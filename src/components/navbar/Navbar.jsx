@@ -5,13 +5,16 @@ import {
   Button,
   Logo,
   ButtonContainer,
+  StyledLink,
 } from "./navbar.style";
 
 const Navbar = () => {
   return (
     <Wrapper>
       <Container>
-        <Logo>Logo</Logo>
+        <StyledLink to={'/'} >
+        <Logo >Logo</Logo>
+        </StyledLink>
         <ButtonContainer>
           <Button>Register</Button>
           <Button>Login</Button>

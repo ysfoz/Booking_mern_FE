@@ -2,7 +2,6 @@ import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
-import "./hotel.css";
 import {
   FooterContainer,
   Container,
@@ -24,6 +23,8 @@ import {
   PriceWrapper,
   SliderContainer,
   SliderWrapper,
+  ArrowIcon,
+  CloseIcon,
 } from "./hotelstyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -100,24 +101,18 @@ const Hotel = () => {
         <ImageContainer>
           {open && (
             <SliderContainer>
-              <FontAwesomeIcon
-                icon={faCircleXmark}
-                className="close"
-                onClick={() => setOpen(false)}
-              />
+              <CloseIcon icon={faCircleXmark} onClick={() => setOpen(false)} />
               <SliderWrapper>
-                <FontAwesomeIcon
+                <ArrowIcon
                   icon={faCircleArrowLeft}
-                  className="arrow"
                   onClick={() => handleChange("l")}
                 />
                 <Image
                   style={{ width: "90%", height: "100%" }}
                   src={photos[slideIndex].src}
                 />
-                <FontAwesomeIcon
+                <ArrowIcon
                   icon={faCircleArrowRight}
-                  className="arrow"
                   onClick={() => handleChange("r")}
                 />
               </SliderWrapper>
@@ -125,7 +120,11 @@ const Hotel = () => {
           )}
 
           {photos.map((image, index) => (
-            <Image src={image.src} key={index} onClick={() => handleModal(index)} />
+            <Image
+              src={image.src}
+              key={index}
+              onClick={() => handleModal(index)}
+            />
           ))}
         </ImageContainer>
         <BottomContainer>
