@@ -19,10 +19,7 @@ const FeaturedProperties = () => {
   const { data, loading, error } = useFetch(
     "/hotel?featured=true&limit=4&min=40&max=600"
   );
-  console.log(
-    "🚀 ~ file: FeaturedProperties.jsx ~ line 20 ~ FeaturedProperties ~ data",
-    data
-  );
+  
 
   return (
     <>

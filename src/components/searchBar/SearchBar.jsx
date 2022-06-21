@@ -20,6 +20,8 @@ import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import OptionBox from "../optionBox/OptionBox";
 
+import { useNavigate } from "react-router-dom";
+
 const SearchBar = () => {
   const [openDate, setOpenDate] = useState(false);
   const [openOption, setOpenOption] = useState(false);
@@ -36,11 +38,16 @@ const SearchBar = () => {
     rooms: 1,
   });
 
+  const [destination, setDestination] = useState('')
+  
+
+  let navigate = useNavigate()
+
   return (
     <Wrapper>
       <ButtonContainer>
         <FontAwesomeIcon icon={faBed} />
-        <City placeholder="Where want to go" />
+        <City placeholder="Where want to go" title={destination} onChange={(e)=>setDestination(e?.target?.value)}/>
       </ButtonContainer>
       <ButtonContainer>
         <FontAwesomeIcon icon={faCalendarDays} />
@@ -77,7 +84,7 @@ const SearchBar = () => {
         {openOption && <OptionBox options={options} setOptions={setOptions} />}
       </ButtonContainer>
       <ButtonContainer>
-        <SearchButton>Search</SearchButton>
+        <SearchButton onClick={()=>navigate('/list',{state:{destination:destination}})}>Search</SearchButton>
       </ButtonContainer>
     </Wrapper>
   );

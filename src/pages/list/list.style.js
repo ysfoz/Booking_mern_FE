@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: fit-content;
 `;
 
 export { Container, Wrapper };

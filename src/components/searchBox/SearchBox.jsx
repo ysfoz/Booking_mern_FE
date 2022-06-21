@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import {
   Container,
   Search,
@@ -11,13 +11,16 @@ import {
   Button,
 } from "./searchBox.style";
 
-const SearchBox = () => {
+const SearchBox = ({destination,handleReFetch}) => {
+  const [min,setMin] = useState(undefined)
+  const [max,setMax] = useState(undefined)
+  const [city,setCity] = useState(destination)
   return (
     <Container>
       <Search>Search</Search>
       <InputsContainer top>
         <Titel top>Destination</Titel>
-        <DestinationandDate />
+        <DestinationandDate value={city} onChange={(e)=>setCity(e.target.value)}/>
       </InputsContainer>
       <InputsContainer top>
         <Titel top>Check-in Date</Titel>
@@ -27,11 +30,11 @@ const SearchBox = () => {
         <Options>Options</Options>
         <InputsContainer>
           <Titel>Min price per night</Titel>
-          <OptionsInput type={"number"} min={1} />
+          <OptionsInput type={"number"} min={1} onChange={(e)=>setMin(e?.target?.value)}/>
         </InputsContainer>
         <InputsContainer>
           <Titel>Max price per night</Titel>
-          <OptionsInput type={"number"} min={1} />
+          <OptionsInput type={"number"} min={1} onChange={(e)=>setMax(e?.target?.value)}/>
         </InputsContainer>
         <InputsContainer>
           <Titel>Adult</Titel>
@@ -47,7 +50,7 @@ const SearchBox = () => {
         </InputsContainer>
       </OptionsContainer>
 
-      <Button>Search</Button>
+      <Button onClick={()=> handleReFetch(city,min,max)}>Search</Button>
     </Container>
   );
 };
