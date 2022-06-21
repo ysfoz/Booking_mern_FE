@@ -125,7 +125,7 @@ const Hotel = () => {
           )}
 
           {photos.map((image, index) => (
-            <Image src={image.src} onClick={() => handleModal(index)} />
+            <Image src={image.src} key={index} onClick={() => handleModal(index)} />
           ))}
         </ImageContainer>
         <BottomContainer>

@@ -23,7 +23,10 @@ const Image = styled.img`
 
 const TitleContainer = styled.div``;
 
-const Title = styled.h4``;
+const Title = styled.h4`
+text-transform:capitalize;
+
+`;
 
 const SubTitle = styled.h5`
   font-weight: 200;
