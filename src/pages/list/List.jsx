@@ -10,6 +10,7 @@ import { useState } from "react";
 
 const List = () => {
   let { state } = useLocation();
+  
 
   const [filter, setFilter] = useState({ city: state?.destination });
 
@@ -31,11 +32,13 @@ const List = () => {
       <Container>
         <SearchBox
           destination={state?.destination}
+          options={state?.options}
+          date={state?.date}
           handleReFetch={handleReFetch}
         />
         <Wrapper>
           {loading ? (
-            <LoadingSpinner />
+            <LoadingSpinner style={{position:"fixed", left:"calc(60%)",top:"calc(50%)"}}/>
           ) : (
             data.map((item, index) => {
               return <SearchItem key={index} item={item} />;

@@ -10,8 +10,10 @@ import {
   OptionsInput,
   Button,
 } from "./searchBox.style";
+import { format } from "date-fns";
 
-const SearchBox = ({destination,handleReFetch}) => {
+const SearchBox = ({destination,handleReFetch,options,date}) => {
+
   const [min,setMin] = useState(undefined)
   const [max,setMax] = useState(undefined)
   const [city,setCity] = useState(destination)
@@ -24,7 +26,10 @@ const SearchBox = ({destination,handleReFetch}) => {
       </InputsContainer>
       <InputsContainer top>
         <Titel top>Check-in Date</Titel>
-        <DestinationandDate />
+        <DestinationandDate value={`${format(
+                date[0].startDate,
+                "MM/dd/yyyy"
+              )} to ${format(date[0].endDate, "MM/dd/yyyy")}`}/>
       </InputsContainer>
       <OptionsContainer>
         <Options>Options</Options>
@@ -38,15 +43,15 @@ const SearchBox = ({destination,handleReFetch}) => {
         </InputsContainer>
         <InputsContainer>
           <Titel>Adult</Titel>
-          <OptionsInput type={"number"} min={1} />
+          <OptionsInput type={"number"} min={1} value={options?.adult} />
         </InputsContainer>
         <InputsContainer>
           <Titel>Children</Titel>
-          <OptionsInput type={"number"} min={0} />
+          <OptionsInput type={"number"} min={0} value={options?.children}/>
         </InputsContainer>
         <InputsContainer>
           <Titel>Room</Titel>
-          <OptionsInput type={"number"} min={1} />
+          <OptionsInput type={"number"} min={1} value={options?.rooms}/>
         </InputsContainer>
       </OptionsContainer>
 

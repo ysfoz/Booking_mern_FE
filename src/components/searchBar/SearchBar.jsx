@@ -37,6 +37,7 @@ const SearchBar = () => {
     children: 0,
     rooms: 1,
   });
+  
 
   const [destination, setDestination] = useState('')
   
@@ -84,7 +85,7 @@ const SearchBar = () => {
         {openOption && <OptionBox options={options} setOptions={setOptions} />}
       </ButtonContainer>
       <ButtonContainer>
-        <SearchButton onClick={()=>navigate('/list',{state:{destination:destination}})}>Search</SearchButton>
+        <SearchButton onClick={()=>navigate('/list',{state:{date,destination,options}})}>Search</SearchButton>
       </ButtonContainer>
     </Wrapper>
   );
