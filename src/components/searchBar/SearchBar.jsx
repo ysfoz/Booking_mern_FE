@@ -21,6 +21,8 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import OptionBox from "../optionBox/OptionBox";
 
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { SearchContext } from "../../context/SearchContext";
 
 const SearchBar = () => {
   const [openDate, setOpenDate] = useState(false);
@@ -37,18 +39,26 @@ const SearchBar = () => {
     children: 0,
     rooms: 1,
   });
-  
 
-  const [destination, setDestination] = useState('')
-  
+  const [city, setCity] = useState(undefined);
 
-  let navigate = useNavigate()
+  const { dispatch } = useContext(SearchContext);
+  let navigate = useNavigate();
+
+  const handleSearch = () => {
+    dispatch({ type: "NEW_SEARCH", payload: { city, date, options } });
+    navigate("/list", { state: { date, city, options } });
+  };
 
   return (
     <Wrapper>
       <ButtonContainer>
         <FontAwesomeIcon icon={faBed} />
-        <City placeholder="Where want to go" title={destination} onChange={(e)=>setDestination(e?.target?.value)}/>
+        <City
+          placeholder="Where want to go"
+          title={city}
+          onChange={(e) => setCity(e?.target?.value)}
+        />
       </ButtonContainer>
       <ButtonContainer>
         <FontAwesomeIcon icon={faCalendarDays} />
@@ -85,7 +95,7 @@ const SearchBar = () => {
         {openOption && <OptionBox options={options} setOptions={setOptions} />}
       </ButtonContainer>
       <ButtonContainer>
-        <SearchButton onClick={()=>navigate('/list',{state:{date,destination,options}})}>Search</SearchButton>
+        <SearchButton onClick={handleSearch}>Search</SearchButton>
       </ButtonContainer>
     </Wrapper>
   );
