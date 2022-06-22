@@ -20,6 +20,21 @@ const SearchBox = () => {
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
   const [newCity, setNewCity] = useState(city);
+  const [newOptions, setNewOptios] = useState({
+    adult: options?.adult,
+    children: options?.children,
+    rooms: options?.rooms,
+  });
+ 
+
+  const handleOptions = (name, e) => {
+    setNewOptios((prev) => {
+      return {
+        ...prev,
+        [name]: e.target.value,
+      };
+    });
+  };
 
   const handleReSearch = () => {
     dispatch({
@@ -67,15 +82,31 @@ const SearchBox = () => {
         </InputsContainer>
         <InputsContainer>
           <Titel>Adult</Titel>
-          <OptionsInput type={"number"} min={1} value={options?.adult} />
+          <OptionsInput
+            type={"number"}
+            min={1}
+            value={newOptions?.adult < 1 ? undefined : newOptions?.adult}
+            onChange={(e) => handleOptions("adult", e)}
+          />
         </InputsContainer>
         <InputsContainer>
           <Titel>Children</Titel>
-          <OptionsInput type={"number"} min={0} value={options?.children} />
+          <OptionsInput
+            type={"number"}
+            min={0}
+            value={newOptions?.children < 0 ? undefined : newOptions?.children}
+            onChange={(e) => handleOptions("children", e)}
+          />
         </InputsContainer>
         <InputsContainer>
           <Titel>Room</Titel>
-          <OptionsInput type={"number"} min={1} value={options?.rooms} />
+          <OptionsInput
+            autoFocus
+            type={"number"}
+            min={1}
+            value={newOptions?.rooms < 1 ? undefined : newOptions?.rooms}
+            onChange={(e) => handleOptions("rooms", e)}
+          />
         </InputsContainer>
       </OptionsContainer>
 
