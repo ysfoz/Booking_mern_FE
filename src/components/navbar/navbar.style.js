@@ -33,4 +33,37 @@ text-decoration: none;
 color: inherit;
 `
 
-export { Wrapper, Container, Logo, Button, ButtonContainer,StyledLink };
+const Profile =styled.div`
+background-color: #fff;
+width: 30px;
+height: 30px;
+border-radius: 25px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 20px;
+cursor: pointer;
+position: relative;
+`
+
+const Name = styled.span`
+color:#0071c2;
+font-size: 20px;
+text-transform: capitalize;
+font-weight: 600;
+`
+const Logout = styled.button`
+z-index: 2;
+position: absolute;
+bottom: -28px;
+right: 15px;
+border: none;
+padding: 4px 10px;
+font-size: 12px;
+font-weight: 400;
+color: white;
+background-color:#0071c2;
+border-radius: 3px;
+`
+
+export { Wrapper, Container, Logo, Button, ButtonContainer,StyledLink,Profile,Name,Logout };

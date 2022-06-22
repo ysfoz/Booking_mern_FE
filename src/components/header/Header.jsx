@@ -17,8 +17,12 @@ import {
   Desc,
   AccountButton,
 } from "./header.style";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = ({ list }) => {
+
+  const { user } = useContext(AuthContext)
   return (
     <Wrapper>
       <Container>
@@ -53,7 +57,7 @@ const Header = ({ list }) => {
                 ore with a free booking account.
               </Desc>
             </TitleContainer>
-            <AccountButton>Register/Sign in</AccountButton>
+            {!user && <AccountButton>Register/Sign in</AccountButton>}
             <SearchBar />
           </>
         )}

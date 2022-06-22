@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
 import {
   Container,
   Wrapper,
@@ -6,19 +9,36 @@ import {
   Logo,
   ButtonContainer,
   StyledLink,
+  Profile,
+  Name,
+  Logout,
 } from "./navbar.style";
 
 const Navbar = () => {
+  const { user,dispatch } = useContext(AuthContext);
+  const [open,setOpen] = useState(false)
+
+const navigate = useNavigate()
+
   return (
     <Wrapper>
       <Container>
-        <StyledLink to={'/'} >
-        <Logo >Logo</Logo>
+        <StyledLink to={"/"}>
+          <Logo>Logo</Logo>
         </StyledLink>
-        <ButtonContainer>
-          <Button>Register</Button>
-          <Button>Login</Button>
-        </ButtonContainer>
+        {user ? (
+          <>
+            <Profile onClick={()=> setOpen(prev => !prev)}>
+              <Name>{user?.username[0]}</Name>
+             {open && <Logout onClick={()=> dispatch({type:"LOGOUT"})} >Logout</Logout>}
+            </Profile>
+          </>
+        ) : (
+          <ButtonContainer>
+            <Button onClick={()=>navigate("/register")}>Register</Button>
+            <Button onClick={()=>navigate("/login")}>Login</Button>
+          </ButtonContainer>
+        )}
       </Container>
     </Wrapper>
   );
