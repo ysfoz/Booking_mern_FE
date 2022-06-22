@@ -15,7 +15,7 @@ const Register = () => {
   return (
     <Container>
       <Wrapper>
-      <InputContainer>
+        <InputContainer>
           <Title htmlFor="email">Email</Title>
           <Input type={"email"} id="email" />
         </InputContainer>
@@ -23,7 +23,7 @@ const Register = () => {
           <Title htmlFor="username">Username</Title>
           <Input id="username" />
         </InputContainer>
-       
+
         <InputContainer>
           <Title htmlFor="password">Password</Title>
           <Input type={"password"} id="password" />
