@@ -9,7 +9,7 @@ import {
   Button,
   StyledLink,
   Toasty,
-  ToastyContainer
+  ToastyContainer,
 } from "./login.style";
 
 import { useFormik } from "formik";
@@ -21,7 +21,6 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { loading, error, dispatch, message } = useContext(AuthContext);
-  console.log("🚀 ~ file: Login.jsx ~ line 22 ~ Login ~ message", message);
   const navigate = useNavigate();
 
   const handleClick = async (values) => {
@@ -52,21 +51,20 @@ const Login = () => {
     },
   });
 
-useEffect(()=>{
-setTimeout(()=> {
-  dispatch({type:"RESET"})
-},10000)
-},[message])
-    
- 
-
+  useEffect(() => {
+    message && setTimeout(() => {
+      dispatch({ type: "RESET" });
+    }, 10000);
+  }, []);
 
   return (
     <Container>
       <Wrapper>
-       {message && <ToastyContainer>
-           <Toasty>{message}</Toasty>
-        </ToastyContainer>}
+        {message && (
+          <ToastyContainer>
+            <Toasty>{message}</Toasty>
+          </ToastyContainer>
+        )}
         <Title>SIGN IN</Title>
         <Form onSubmit={formik.handleSubmit}>
           <Input

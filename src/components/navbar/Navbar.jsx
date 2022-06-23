@@ -20,6 +20,10 @@ const Navbar = () => {
 
 const navigate = useNavigate()
 
+const logout = () =>{
+  dispatch({type:"LOGOUT"})
+}
+
   return (
     <Wrapper>
       <Container>
@@ -30,7 +34,7 @@ const navigate = useNavigate()
           <>
             <Profile onClick={()=> setOpen(prev => !prev)}>
               <Name>{user?.username[0]}</Name>
-             {open && <Logout onClick={()=> dispatch({type:"LOGOUT"})} >Logout</Logout>}
+             {open && <Logout onClick={logout} >Logout</Logout>}
             </Profile>
           </>
         ) : (

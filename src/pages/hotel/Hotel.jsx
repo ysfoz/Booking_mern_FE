@@ -34,23 +34,26 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import useFetch from "../../hooks/useFetch";
 import { LoadingSpinner } from "../../components/spinner/spinner.style";
 import { useContext } from "react";
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
+import Reserve from "../../components/reserve/Reserve";
 
 const Hotel = () => {
   const [open, setOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
   const [slideIndex, setSlideIndex] = useState(0);
-
+  const { user } = useContext(AuthContext);
   const location = useLocation();
   const id = location.pathname.split("/")[2];
 
   const { data, loading, error } = useFetch(`/hotel/find/${id}`);
 
-  const { date,options } = useContext(SearchContext);
+  const { date, options } = useContext(SearchContext);
 
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   function dayDifference(date1, date2) {
@@ -74,6 +77,15 @@ const Hotel = () => {
     }
     setSlideIndex(slideNumber);
   };
+
+  const navigate = useNavigate();
+  const handleReserve = () => {
+    if (user) {
+      setOpenModal(true)
+    } else {
+      navigate("/login");
+    }
+  };
   return (
     <>
       <Navbar />
@@ -84,6 +96,7 @@ const Hotel = () => {
       ) : (
         <>
           <Container>
+            {openModal && <Reserve setOpenModal={setOpenModal}/>}
             <HeaderContainer>
               <Wrapper>
                 <Title>{data.name}</Title>
@@ -100,11 +113,10 @@ const Hotel = () => {
                   taxi
                 </Info>
               </Wrapper>
-              {days === 0 ? (
-                <Button>Back to Search</Button>
-              ) : (
-                <Button>Reserve or Book Now!</Button>
-              )}
+
+              <Button onClick={handleReserve}>
+                {!user ? "Login" : "Reserve or Book Now!"}
+              </Button>
             </HeaderContainer>
             <ImageContainer>
               {open && (
@@ -144,7 +156,9 @@ const Hotel = () => {
                 <Detail>{data.desc}</Detail>
               </DetailsContainer>
               <PriceContainer>
-                <Title small>{`Perfect for a ${days}-nights stay and ${options.rooms} rooms!`}</Title>
+                <Title
+                  small
+                >{`Perfect for a ${days}-nights stay and ${options.rooms} rooms!`}</Title>
                 <Detail>
                   {`Located in the real heart of ${data.city}, this propperty has an excellent location score of ${data.rating}`}
                 </Detail>
@@ -152,11 +166,9 @@ const Hotel = () => {
                   <Price>${days * data?.cheapestPrice * options.rooms}</Price>
                   <PriceDetail>{`( ${days} nights )`}</PriceDetail>
                 </PriceWrapper>
-                {days === 0 ? (
-                  <Button>Back to Search</Button>
-                ) : (
-                  <Button>Reserve or Book Now!</Button>
-                )}
+                <Button onClick={handleReserve}>
+                  {!user ? "Login" : "Reserve or Book Now!"}
+                </Button>
               </PriceContainer>
             </BottomContainer>
           </Container>

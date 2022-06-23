@@ -53,7 +53,6 @@ const Register = () => {
     },
   });
 
-
   return (
     <Container>
       <Wrapper>
