@@ -14,21 +14,33 @@ position: fixed;
   justify-content: center;
 `
 const Wrapper= styled.div`
- width: 40%;
+padding:50px 10px;
+ width: 50%;
   height: 70%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+ gap: 30px;
   background-color: #fff;
+  position: relative;
+  flex-direction: column;
+ overflow-y: scroll;
 `
 
 const CloseIcon = styled(FontAwesomeIcon)`
-  position: fixed;
-  top: 80px;
-  right: 25%;
-  font-size: 40px;
-  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+  color: #0071c2;
   cursor: pointer;
 `;
 
-export { Container,CloseIcon,Wrapper }
+const Title = styled.h4`
+position: absolute;
+top: 10px;
+color: #0071c2;
+left: 10px;
+
+`
+
+export { Container,CloseIcon,Wrapper,Title }

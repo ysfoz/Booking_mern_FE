@@ -96,7 +96,7 @@ const Hotel = () => {
       ) : (
         <>
           <Container>
-            {openModal && <Reserve setOpenModal={setOpenModal}/>}
+            {openModal && <Reserve setOpenModal={setOpenModal} id={id}/>}
             <HeaderContainer>
               <Wrapper>
                 <Title>{data.name}</Title>
