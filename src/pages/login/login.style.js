@@ -74,4 +74,19 @@ const Button = styled.button`
   align-items:center;
 `;
 
-export {Container,Wrapper,Error,Button,ButtonWrapper,Input,Form,Title,StyledLink}
+const ToastyContainer = styled.div`
+background-color: #64ffda;
+width: fit-content;
+padding: 5px;
+`
+
+const Toasty = styled.h1`
+  font-size: 20px;
+  font-weight: 500;
+  color: #607d8b;
+  text-align:center;
+`;
+
+
+
+export {Container,Wrapper,Error,Button,ButtonWrapper,Input,Form,Title,StyledLink,Toasty,ToastyContainer}

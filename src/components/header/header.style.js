@@ -53,9 +53,9 @@ const Desc = styled.span`
 const AccountButton = styled.button`
   border: none;
   cursor: pointer;
-  background-color: #0071c2;
+  background-color:${(props)=> props.white ? "white" : "#0071c2"} ;
   display: flex;
-  color: white;
+  color: ${(props)=> props.white ? " #003580" : "white"};
   margin: 40px 0px;
   padding: 6px;
   width: 120px;

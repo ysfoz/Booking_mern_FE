@@ -17,12 +17,14 @@ import {
   Desc,
   AccountButton,
 } from "./header.style";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ list }) => {
-
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+  const [open,setOpen] = useState(false)
+  const navigate= useNavigate()
   return (
     <Wrapper>
       <Container>
@@ -57,7 +59,14 @@ const Header = ({ list }) => {
                 ore with a free booking account.
               </Desc>
             </TitleContainer>
-            {!user && <AccountButton>Register/Sign in</AccountButton>}
+            <ButtonContainer>
+            {!user && (
+                <AccountButton onClick={()=> setOpen(p=>!p)}>Register/Sign in</AccountButton>
+                )}
+              {open && <><AccountButton white onClick={()=>navigate("/login")}>Login</AccountButton>
+                <AccountButton white onClick={()=>navigate("/register")}>Register</AccountButton></>}
+            
+            </ButtonContainer>
             <SearchBar />
           </>
         )}
