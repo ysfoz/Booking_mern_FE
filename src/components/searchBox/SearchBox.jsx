@@ -43,6 +43,11 @@ const SearchBox = () => {
     });
   };
 
+  const dateValue = `${format(date[0]?.startDate, "MM/dd/yyyy")} to ${format(
+    date[0]?.endDate,
+    "MM/dd/yyyy"
+  )}`
+
   return (
     <Container>
       <Search>Search</Search>
@@ -56,10 +61,7 @@ const SearchBox = () => {
       <InputsContainer top>
         <Titel top>Check-in Date</Titel>
         <DestinationandDate
-          value={`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
-            date[0].endDate,
-            "MM/dd/yyyy"
-          )}`}
+          defaultValue={dateValue}
         />
       </InputsContainer>
       <OptionsContainer>

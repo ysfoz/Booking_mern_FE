@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Check,
   Container,
@@ -8,27 +9,37 @@ import {
   Wrapper,
 } from "./selectRoom.style";
 
-const SelectRoom = () => {
+
+const SelectRoom = ({ room,selectedRooms,setSelectedRooms }) => {
+
+
+const handleSelect = (e) =>{
+  const checked = e.target.checked
+  const value = e.target.value
+  setSelectedRooms(checked ? [...selectedRooms,value]: selectedRooms.filter((item)=>item !== value))
+}
+
   return (
     <Container>
-      <TitleContainer >
-        <Title weight="600">King Room</Title>
-        <Title>King size bed, 1 bth, balcony</Title>
-        <Title>2 Bedrooms</Title>
+       
+      <TitleContainer>
+        <Title weight="600">{room.title}</Title>
+        <Title>{room.desc}</Title>
+
         <Title size="12px">
-          Max People : <b>3</b>
+          Max People : <b>{room.maxPeople}</b>
         </Title>
-        <Title weight="600">100</Title>
+        <Title weight="600">${room.price}</Title>
       </TitleContainer>
       <Wrapper>
-        <InputContainer>
-          <Label >101</Label>
-          <Check type={"checkbox"} />
-        </InputContainer>
-        <InputContainer>
-          <Label>102</Label>
-          <Check type={"checkbox"} />
-        </InputContainer>
+        {room?.roomNumbers?.map((number,i) => {
+          return (
+            <InputContainer key={i}>
+              <Label>{number.number}</Label>
+              <Check type={"checkbox"} value={number._id} onChange={ handleSelect}/>
+            </InputContainer>
+          );
+        })}
       </Wrapper>
     </Container>
   );
