@@ -27,7 +27,6 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex: 2;
-
   justify-content: space-between;
 `;
 

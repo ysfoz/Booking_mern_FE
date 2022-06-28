@@ -1,20 +1,19 @@
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import SelectRoom from "../selectRoom/SelectRoom";
 import { LoadingSpinner } from "../spinner/spinner.style";
 import { CloseIcon, Wrapper, Container, Title, Button } from "./reserve.style";
 import { SearchContext } from "../../context/SearchContext";
 import useFetch from "../../hooks/useFetch";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const Reserve = ({ setOpenModal, id, days }) => {
-  const { loading, error, data } = useFetch(`/hotel/room/${id}`);
-  const [message, setMessage] = useState("");
-  const navigate = useNavigate();
   const [selectedRooms, setSelectedRooms] = useState([]);
+  const { loading, data } = useFetch(`/hotel/room/${id}`);
   const { date } = useContext(SearchContext);
+  const navigate = useNavigate();
 
   const getDatesInRange = (start, days) => {
     const date = new Date(start.getTime());

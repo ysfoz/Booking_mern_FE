@@ -1,8 +1,5 @@
 import styled from "styled-components";
 
-
-
-
 const LoadingSpinner = styled.div`
   @keyframes spinner {
     0% {
@@ -20,4 +17,4 @@ const LoadingSpinner = styled.div`
   animation: spinner 1.5s linear infinite;
 `;
 
-export { LoadingSpinner}
+export { LoadingSpinner };

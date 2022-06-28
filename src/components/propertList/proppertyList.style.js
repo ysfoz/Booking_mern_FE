@@ -24,8 +24,7 @@ const Image = styled.img`
 const TitleContainer = styled.div``;
 
 const Title = styled.h4`
-text-transform:capitalize;
-
+  text-transform: capitalize;
 `;
 
 const SubTitle = styled.h5`

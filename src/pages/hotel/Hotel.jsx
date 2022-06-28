@@ -49,7 +49,7 @@ const Hotel = () => {
   const { user } = useContext(AuthContext);
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  const { data, loading, error } = useFetch(`/hotel/find/${id}`);
+  const { data, loading } = useFetch(`/hotel/find/${id}`);
   const { date, options } = useContext(SearchContext);
   const navigate = useNavigate();
 

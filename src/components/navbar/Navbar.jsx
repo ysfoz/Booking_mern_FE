@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { useContext } from "react";
+import { useState,useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { AuthContext } from "../../context/AuthContext";
 import {
   Container,
@@ -15,15 +15,13 @@ import {
 } from "./navbar.style";
 
 const Navbar = () => {
-  const { user,dispatch } = useContext(AuthContext);
-  const [open,setOpen] = useState(false)
-
-const navigate = useNavigate()
-
-const logout = () =>{
-  dispatch({type:"LOGOUT"})
-}
-
+  const { user, dispatch } = useContext(AuthContext);
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const logout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+  
   return (
     <Wrapper>
       <Container>
@@ -32,15 +30,15 @@ const logout = () =>{
         </StyledLink>
         {user ? (
           <>
-            <Profile onClick={()=> setOpen(prev => !prev)}>
+            <Profile onClick={() => setOpen((prev) => !prev)}>
               <Name>{user?.username[0]}</Name>
-             {open && <Logout onClick={logout} >Logout</Logout>}
+              {open && <Logout onClick={logout}>Logout</Logout>}
             </Profile>
           </>
         ) : (
           <ButtonContainer>
-            <Button onClick={()=>navigate("/register")}>Register</Button>
-            <Button onClick={()=>navigate("/login")}>Login</Button>
+            <Button onClick={() => navigate("/register")}>Register</Button>
+            <Button onClick={() => navigate("/login")}>Login</Button>
           </ButtonContainer>
         )}
       </Container>

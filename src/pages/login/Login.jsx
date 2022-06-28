@@ -1,3 +1,9 @@
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useContext, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 import {
   Container,
   Wrapper,
@@ -11,13 +17,7 @@ import {
   Toasty,
   ToastyContainer,
 } from "./login.style";
-
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { loading, error, dispatch, message } = useContext(AuthContext);
@@ -52,9 +52,10 @@ const Login = () => {
   });
 
   useEffect(() => {
-    message && setTimeout(() => {
-      dispatch({ type: "RESET" });
-    }, 10000);
+    message &&
+      setTimeout(() => {
+        dispatch({ type: "RESET" });
+      }, 10000);
   }, []);
 
   return (

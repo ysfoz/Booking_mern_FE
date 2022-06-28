@@ -160,5 +160,5 @@ export {
   SliderContainer,
   SliderWrapper,
   ArrowIcon,
-  CloseIcon
+  CloseIcon,
 };

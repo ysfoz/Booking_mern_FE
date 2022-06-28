@@ -1,3 +1,6 @@
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import Featured from "../../components/featured/Featured";
@@ -6,18 +9,16 @@ import FeaturedProperties from "../../components/featuredProperties/FeaturedProp
 import MailList from "../../components/mailList/MailList";
 import { ListContainer, Title, Toasty, ToastyContainer } from "./home.style";
 import Footer from "../../components/footer/Footer";
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import { useState } from "react";
 
 const Home = () => {
-  const {state } = useLocation()
-  const [message,setMessage] = useState(state?.message || '')
+  const { state } = useLocation();
+  const [message, setMessage] = useState(state?.message || "");
 
   useEffect(() => {
-    message && setTimeout(() => {
-      setMessage("")
-    }, 10000);
+    message &&
+      setTimeout(() => {
+        setMessage("");
+      }, 10000);
   }, []);
 
   return (
@@ -25,7 +26,7 @@ const Home = () => {
       <Navbar />
       <Header />
       <ListContainer>
-      {message && (
+        {message && (
           <ToastyContainer>
             <Toasty>{message}</Toasty>
           </ToastyContainer>

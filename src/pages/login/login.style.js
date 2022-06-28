@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -20,7 +19,6 @@ const Wrapper = styled.div`
   width: 35%;
   padding: 20px;
   background-color: white;
-  
 `;
 const Title = styled.h1`
   font-size: 24px;
@@ -30,7 +28,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
 `;
- const Input = styled.input`
+const Input = styled.input`
   flex: 1;
   min-width: 40%;
   margin: 16px 0px;
@@ -51,12 +49,12 @@ const Button = styled.button`
   }
 `;
 
- const Error = styled.span`
+const Error = styled.span`
   color: red;
-  margin:7px;
+  margin: 7px;
 `;
 
- const StyledLink = styled(Link)`
+const StyledLink = styled(Link)`
   width: 40%;
   border: none;
   padding: 15px 20px;
@@ -68,25 +66,35 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
- const ButtonWrapper = styled.div`
+const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 `;
 
 const ToastyContainer = styled.div`
-background-color: #64ffda;
-width: fit-content;
-padding: 5px;
-`
+  background-color: #64ffda;
+  width: fit-content;
+  padding: 5px;
+`;
 
 const Toasty = styled.h1`
   font-size: 20px;
   font-weight: 500;
   color: #607d8b;
-  text-align:center;
+  text-align: center;
 `;
 
-
-
-export {Container,Wrapper,Error,Button,ButtonWrapper,Input,Form,Title,StyledLink,Toasty,ToastyContainer}
+export {
+  Container,
+  Wrapper,
+  Error,
+  Button,
+  ButtonWrapper,
+  Input,
+  Form,
+  Title,
+  StyledLink,
+  Toasty,
+  ToastyContainer,
+};

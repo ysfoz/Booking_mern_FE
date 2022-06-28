@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { useState,useContext } from "react";
+import { format } from "date-fns";
+
 import {
   Container,
   Search,
@@ -10,13 +12,10 @@ import {
   OptionsInput,
   Button,
 } from "./searchBox.style";
-import { format } from "date-fns";
-import { useContext } from "react";
 import { SearchContext } from "../../context/SearchContext";
 
 const SearchBox = () => {
   const { city, date, options, dispatch } = useContext(SearchContext);
-
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
   const [newCity, setNewCity] = useState(city);
@@ -26,7 +25,6 @@ const SearchBox = () => {
     rooms: options?.rooms,
   });
  
-
   const handleOptions = (name, e) => {
     setNewOptios((prev) => {
       return {

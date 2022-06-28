@@ -1,3 +1,9 @@
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useContext } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 import {
   Container,
   Wrapper,
@@ -9,13 +15,7 @@ import {
   Button,
   StyledLink,
 } from "./register.style";
-
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { loading, error, dispatch } = useContext(AuthContext);

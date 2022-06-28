@@ -5,6 +5,10 @@ import {
   faPlane,
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+
 import SearchBar from "../searchBar/SearchBar";
 import {
   Wrapper,
@@ -17,14 +21,11 @@ import {
   Desc,
   AccountButton,
 } from "./header.style";
-import { useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 const Header = ({ list }) => {
   const { user } = useContext(AuthContext);
-  const [open,setOpen] = useState(false)
-  const navigate= useNavigate()
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <Wrapper>
       <Container>
@@ -60,12 +61,21 @@ const Header = ({ list }) => {
               </Desc>
             </TitleContainer>
             <ButtonContainer>
-            {!user && (
-                <AccountButton onClick={()=> setOpen(p=>!p)}>Register/Sign in</AccountButton>
-                )}
-              {open && <><AccountButton white onClick={()=>navigate("/login")}>Login</AccountButton>
-                <AccountButton white onClick={()=>navigate("/register")}>Register</AccountButton></>}
-            
+              {!user && (
+                <AccountButton onClick={() => setOpen((p) => !p)}>
+                  Register/Sign in
+                </AccountButton>
+              )}
+              {open && (
+                <>
+                  <AccountButton white onClick={() => navigate("/login")}>
+                    Login
+                  </AccountButton>
+                  <AccountButton white onClick={() => navigate("/register")}>
+                    Register
+                  </AccountButton>
+                </>
+              )}
             </ButtonContainer>
             <SearchBar />
           </>

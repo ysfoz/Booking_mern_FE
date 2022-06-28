@@ -17,7 +17,6 @@ const Title = styled.div`
 const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  
 `;
 const TitleContainer = styled.div``;
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, List, ListItem, Wrapper } from "./footer.style";
 
 const Footer = () => {

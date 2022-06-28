@@ -1,4 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  faBed,
+  faCalendarDays,
+  faPerson,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { format } from "date-fns";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+
 import {
   ButtonContainer,
   Wrapper,
@@ -7,21 +18,7 @@ import {
   SearchButton,
   StyledDateRange,
 } from "./searchBar.style";
-
-import {
-  faBed,
-  faCalendarDays,
-  faPerson,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { format } from "date-fns";
-
-import "react-date-range/dist/styles.css"; // main style file
-import "react-date-range/dist/theme/default.css"; // theme css file
 import OptionBox from "../optionBox/OptionBox";
-
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
 import { SearchContext } from "../../context/SearchContext";
 
 const SearchBar = () => {
@@ -39,9 +36,7 @@ const SearchBar = () => {
     children: 0,
     rooms: 1,
   });
-
   const [city, setCity] = useState(undefined);
-
   const { dispatch } = useContext(SearchContext);
   let navigate = useNavigate();
 

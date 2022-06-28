@@ -1,5 +1,5 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
+
 import {
   Container,
   InfoContainer,
@@ -18,9 +18,8 @@ import {
 } from "./searchItem.style";
 
 const SearchItem = ({ item }) => {
+  let navigate = useNavigate();
 
-  let navigate = useNavigate()
-  
   return (
     <Container>
       <ImageContainer>
@@ -52,8 +51,9 @@ const SearchItem = ({ item }) => {
         <AvailableContainer>
           <Price>{item?.cheapestPrice}</Price>
           <SubInfo>Includes taxes and fees</SubInfo>
-
-          <Button onClick={()=> navigate(`/hotel/${item?._id}`)}>See Availability</Button>
+          <Button onClick={() => navigate(`/hotel/${item?._id}`)}>
+            See Availability
+          </Button>
         </AvailableContainer>
       </PriceContainer>
     </Container>
