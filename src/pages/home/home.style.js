@@ -12,4 +12,17 @@ const Title = styled.h3`
 width: 1024px;
 `
 
-export { ListContainer,Title };
+const ToastyContainer = styled.div`
+background-color: #64ffda;
+width: fit-content;
+padding: 5px;
+`
+
+const Toasty = styled.h1`
+  font-size: 20px;
+  font-weight: 500;
+  color: #607d8b;
+  text-align:center;
+`;
+
+export { ListContainer,Title,Toasty,ToastyContainer };
