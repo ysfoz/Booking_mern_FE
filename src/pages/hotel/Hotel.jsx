@@ -1,3 +1,13 @@
+import { useState, useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleArrowLeft,
+  faCircleArrowRight,
+  faCircleXmark,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
+
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
@@ -26,34 +36,22 @@ import {
   ArrowIcon,
   CloseIcon,
 } from "./hotelstyle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleArrowLeft,
-  faCircleArrowRight,
-  faCircleXmark,
-  faLocationDot,
-} from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-
 import useFetch from "../../hooks/useFetch";
 import { LoadingSpinner } from "../../components/spinner/spinner.style";
-import { useContext } from "react";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
 
 const Hotel = () => {
   const [open, setOpen] = useState(false);
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
   const [slideIndex, setSlideIndex] = useState(0);
   const { user } = useContext(AuthContext);
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-
   const { data, loading, error } = useFetch(`/hotel/find/${id}`);
-
   const { date, options } = useContext(SearchContext);
+  const navigate = useNavigate();
 
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
   function dayDifference(date1, date2) {
@@ -78,10 +76,9 @@ const Hotel = () => {
     setSlideIndex(slideNumber);
   };
 
-  const navigate = useNavigate();
   const handleReserve = () => {
     if (user) {
-      setOpenModal(true)
+      setOpenModal(true);
     } else {
       navigate("/login");
     }
@@ -96,7 +93,9 @@ const Hotel = () => {
       ) : (
         <>
           <Container>
-            {openModal && <Reserve setOpenModal={setOpenModal} id={id}/>}
+            {openModal && (
+              <Reserve days={days} setOpenModal={setOpenModal} id={id} />
+            )}
             <HeaderContainer>
               <Wrapper>
                 <Title>{data.name}</Title>

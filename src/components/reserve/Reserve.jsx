@@ -1,37 +1,81 @@
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import useFetch from "../../hooks/useFetch";
+import { useContext, useState } from "react";
+
 import SelectRoom from "../selectRoom/SelectRoom";
 import { LoadingSpinner } from "../spinner/spinner.style";
 import { CloseIcon, Wrapper, Container, Title, Button } from "./reserve.style";
+import { SearchContext } from "../../context/SearchContext";
+import useFetch from "../../hooks/useFetch";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const Reserve = ({ setOpenModal, id }) => {
+const Reserve = ({ setOpenModal, id, days }) => {
   const { loading, error, data } = useFetch(`/hotel/room/${id}`);
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
   const [selectedRooms, setSelectedRooms] = useState([]);
-  console.log("🚀 ~ file: REserve.jsx ~ line 11 ~ Reserve ~ selectedRooms", selectedRooms)
+  const { date } = useContext(SearchContext);
 
+  const getDatesInRange = (start, days) => {
+    const date = new Date(start.getTime());
+    const list = [];
+    while (days >= 0) {
+      list.push(new Date(date).getTime());
+      date.setDate(date.getDate() + 1);
+      days -= 1;
+    }
+    return list;
+  };
 
+  const selectedDays = getDatesInRange(date[0]?.startDate, days);
+
+  const isAvailable = (room) => {
+    const isFound = room?.unavailableDates?.some((date) =>
+      selectedDays?.includes(new Date(date).getTime())
+    );
+    return isFound;
+  };
+
+  const setRoomAvailability = async () => {
+    try {
+      await Promise.all(
+        selectedRooms.map((roomNumberId) => {
+          axios
+            .put(`/room/availability/${roomNumberId}`, {
+              date: selectedDays,
+            })
+            .then((res) => {
+              navigate("/", { state: { message: res?.data } });
+            });
+        })
+      );
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setOpenModal(false);
+    }
+  };
 
   return (
     <Container>
       <Wrapper>
         <Title>Select your rooms:</Title>
         <CloseIcon icon={faCircleXmark} onClick={() => setOpenModal(false)} />
-
         {loading ? (
           <LoadingSpinner />
         ) : (
           data?.map((room) => (
             <SelectRoom
+              isAvailable={isAvailable}
+              selectedDates={selectedDays}
               key={room._id}
               room={room}
               selectedRooms={selectedRooms}
               setSelectedRooms={setSelectedRooms}
-             
             />
           ))
         )}
-        <Button>Reserve</Button>
+        <Button onClick={setRoomAvailability}>Reserve</Button>
       </Wrapper>
     </Container>
   );

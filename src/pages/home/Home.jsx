@@ -6,8 +6,11 @@ import FeaturedProperties from "../../components/featuredProperties/FeaturedProp
 import MailList from "../../components/mailList/MailList";
 import { ListContainer, Title } from "./home.style";
 import Footer from "../../components/footer/Footer";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+  const {state } = useLocation()
+
   return (
     <>
       <Navbar />
