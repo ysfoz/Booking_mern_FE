@@ -1,4 +1,4 @@
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 import { format } from "date-fns";
 
 import {
@@ -11,6 +11,7 @@ import {
   Options,
   OptionsInput,
   Button,
+  Wrapper,
 } from "./searchBox.style";
 import { SearchContext } from "../../context/SearchContext";
 
@@ -24,7 +25,7 @@ const SearchBox = () => {
     children: options?.children,
     rooms: options?.rooms,
   });
- 
+
   const handleOptions = (name, e) => {
     setNewOptios((prev) => {
       return {
@@ -44,28 +45,28 @@ const SearchBox = () => {
   const dateValue = `${format(date[0]?.startDate, "MM/dd/yyyy")} to ${format(
     date[0]?.endDate,
     "MM/dd/yyyy"
-  )}`
+  )}`;
 
   return (
     <Container>
       <Search>Search</Search>
-      <InputsContainer top>
-        <Titel top>Destination</Titel>
-        <DestinationandDate
-          value={newCity}
-          onChange={(e) => setNewCity(e.target.value)}
-        />
-      </InputsContainer>
-      <InputsContainer top>
-        <Titel top>Check-in Date</Titel>
-        <DestinationandDate
-          defaultValue={dateValue}
-        />
-      </InputsContainer>
+      <Wrapper>
+        <InputsContainer top>
+          <Titel top>Destination</Titel>
+          <DestinationandDate
+            value={newCity}
+            onChange={(e) => setNewCity(e.target.value)}
+          />
+        </InputsContainer>
+        <InputsContainer top>
+          <Titel top>Check-in Date</Titel>
+          <DestinationandDate defaultValue={dateValue} />
+        </InputsContainer>
+      </Wrapper>
       <OptionsContainer>
         <Options>Options</Options>
         <InputsContainer>
-          <Titel>Min price per night</Titel>
+          <Titel>Min price</Titel>
           <OptionsInput
             type={"number"}
             min={1}
@@ -73,7 +74,7 @@ const SearchBox = () => {
           />
         </InputsContainer>
         <InputsContainer>
-          <Titel>Max price per night</Titel>
+          <Titel>Max price</Titel>
           <OptionsInput
             type={"number"}
             min={1}

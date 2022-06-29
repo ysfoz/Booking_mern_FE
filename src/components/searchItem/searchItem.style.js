@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile, small } from "../responsive";
 
 const Container = styled.div`
   flex: 3;
@@ -10,6 +11,8 @@ const Container = styled.div`
   padding: 10px;
   gap: 10px;
   height: 200px;
+  ${mobile({"flex-direction":"column"})}
+  ${small({"flex-direction":"column"})}
 `;
 
 const ImageContainer = styled.div`
@@ -21,6 +24,7 @@ const Image = styled.img`
   height: 200px;
   object-fit: cover;
   border-radius: 5px;
+  ${small({"height":"300px"})}
 `;
 
 const InfoContainer = styled.div`

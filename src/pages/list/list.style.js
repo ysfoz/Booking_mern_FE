@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { tablet } from "../../components/responsive";
 
 const Container = styled.div`
   display: flex;
@@ -6,9 +7,9 @@ const Container = styled.div`
   width: 100%;
   max-width: 1024px;
   margin: auto auto;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 50px;
-  padding-left: 5px;
+  ${tablet({ "flex-direction": "column", width: "98%" })}
 `;
 
 const Wrapper = styled.div`
