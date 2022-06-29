@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const Container = styled.div`
   background-color: #febb02;
   padding: 12px;
@@ -9,6 +10,7 @@ const Container = styled.div`
   height: fit-content;
   position: sticky;
   top: 10px;
+  
 `;
 
 const Search = styled.h2`

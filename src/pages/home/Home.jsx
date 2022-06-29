@@ -7,7 +7,7 @@ import Featured from "../../components/featured/Featured";
 import PropertyList from "../../components/propertList/PropertyList";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import MailList from "../../components/mailList/MailList";
-import { ListContainer, Title, Toasty, ToastyContainer } from "./home.style";
+import { Container, ListContainer, Title, Toasty, ToastyContainer,Wrapper } from "./home.style";
 import Footer from "../../components/footer/Footer";
 
 const Home = () => {
@@ -22,9 +22,12 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <Container>
+      <Wrapper>
       <Navbar />
       <Header />
+
+      </Wrapper>
       <ListContainer>
         {message && (
           <ToastyContainer>
@@ -39,7 +42,7 @@ const Home = () => {
         <MailList />
         <Footer />
       </ListContainer>
-    </>
+    </Container>
   );
 };
 

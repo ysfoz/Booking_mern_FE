@@ -1,4 +1,12 @@
 import styled from "styled-components";
+import { middle } from "../../components/responsive";
+
+const Container = styled.div``;
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 
 const ListContainer = styled.div`
   margin-top: 50px;
@@ -10,6 +18,7 @@ const ListContainer = styled.div`
 
 const Title = styled.h3`
   width: 1024px;
+  ${middle({ width: "fit-content" })}
 `;
 
 const ToastyContainer = styled.div`
@@ -25,4 +34,4 @@ const Toasty = styled.h1`
   text-align: center;
 `;
 
-export { ListContainer, Title, Toasty, ToastyContainer };
+export { Container, Wrapper, ListContainer, Title, Toasty, ToastyContainer };

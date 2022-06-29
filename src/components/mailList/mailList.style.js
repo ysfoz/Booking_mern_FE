@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   background-color: #003580;
@@ -28,6 +29,7 @@ const Mail = styled.input`
   height: 30px;
   border: none;
   border-radius: 3px;
+  ${mobile({ width: "200px" })}
 `;
 const Button = styled.button`
   border: none;

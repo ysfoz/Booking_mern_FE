@@ -23,8 +23,8 @@ const Navbar = () => {
   };
   
   return (
-    <Wrapper>
-      <Container>
+    <Container>
+      <Wrapper>
         <StyledLink to={"/"}>
           <Logo>Logo</Logo>
         </StyledLink>
@@ -41,8 +41,8 @@ const Navbar = () => {
             <Button onClick={() => navigate("/login")}>Login</Button>
           </ButtonContainer>
         )}
-      </Container>
-    </Wrapper>
+      </Wrapper>
+    </Container>
   );
 };
 

@@ -1,13 +1,16 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
-const Wrapper = styled.div`
+const Container = styled.div`
   background-color: #003580;
   display: flex;
   justify-content: center;
   position: relative;
+  padding: 10px 20px;
+
 `;
 
-const Container = styled.div`
+const Wrapper = styled.div`
   width: 100%;
   max-width: 1024px;
   color: white;
@@ -19,12 +22,13 @@ const ButtonContainer = styled.div`
   display: flex;
   gap: 25px;
   margin: 15px 0px;
+${mobile({"justify-content":"space-between"})}
 `;
 
 const ButtonBox = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+
 `;
 
 const Button = styled.button`
@@ -32,22 +36,26 @@ const Button = styled.button`
   cursor: pointer;
   color: white;
   background-color: #003580;
+  ${mobile({"display":"none"})}
 `;
 
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
-`;
+  `;
 
 const Title = styled.span`
   font-size: 25px;
   font-weight: bold;
-`;
+  ${mobile({"font-size":"18px"})}
+  
+  `;
 
 const Desc = styled.span`
   font-weight: 200;
   margin-top: 10px;
   font-style: 10px;
+  ${mobile({"font-size":"14px"})}
 `;
 
 const AccountButton = styled.button`

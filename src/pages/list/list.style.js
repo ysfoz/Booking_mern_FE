@@ -8,6 +8,7 @@ const Container = styled.div`
   margin: auto auto;
   margin-top: 50px;
   margin-bottom: 50px;
+  padding-left: 5px;
 `;
 
 const Wrapper = styled.div`
@@ -15,6 +16,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 20px;
   height: fit-content;
+  padding-right: 5px;
 `;
 
 export { Container, Wrapper };

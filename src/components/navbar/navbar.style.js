@@ -1,13 +1,16 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { tablet,mobile,middle } from "../responsive";
 
-const Wrapper = styled.div`
+const Container = styled.div`
   height: 50px;
   background-color: #003580;
   display: flex;
   justify-content: center;
+  padding: 10px 20px;
+  
 `;
-const Container = styled.div`
+const Wrapper = styled.div`
   width: 100%;
   max-width: 1024px;
   color: white;

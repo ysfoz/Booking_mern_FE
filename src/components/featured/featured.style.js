@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   margin-top: 50px;
@@ -6,8 +7,8 @@ const Container = styled.div`
   max-width: 1024px;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
   z-index: 1px;
+  
 `;
 
 const Wrapper = styled.div`
@@ -17,6 +18,8 @@ const Wrapper = styled.div`
   overflow: hidden;
   height: 250px;
   flex: 1;
+  margin: 0px 5px;
+  ${mobile({"height":"150px","margin-top":"20px"})}
 `;
 const Image = styled.img`
   width: 100%;
@@ -30,8 +33,11 @@ const TitleContainer = styled.div`
   color: white;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+${mobile({"font-size":"20px"})}`;
 
-const SubTitel = styled.h2``;
+const SubTitel = styled.h2`
+${mobile({"font-size":"16px"})}
+`;
 
 export { Container, Title, Image, SubTitel, TitleContainer, Wrapper };

@@ -27,8 +27,8 @@ const Header = ({ list }) => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   return (
-    <Wrapper>
-      <Container>
+    <Container>
+      <Wrapper>
         <ButtonContainer>
           <ButtonBox>
             <FontAwesomeIcon icon={faBed} />
@@ -77,11 +77,11 @@ const Header = ({ list }) => {
                 </>
               )}
             </ButtonContainer>
-            <SearchBar />
           </>
         )}
-      </Container>
-    </Wrapper>
+      </Wrapper>
+        {!list &&<SearchBar />}
+    </Container>
   );
 };
 

@@ -50,19 +50,19 @@ const SearchBar = () => {
       <ButtonContainer>
         <FontAwesomeIcon icon={faBed} />
         <City
-          placeholder="Where want to go"
+          placeholder="Chicago"
           title={city}
           onChange={(e) => setCity(e?.target?.value)}
         />
       </ButtonContainer>
-      <ButtonContainer>
+      <ButtonContainer
+        onClick={() => {
+          setOpenDate((prev) => !prev);
+          setOpenOption(false);
+        }}
+      >
         <FontAwesomeIcon icon={faCalendarDays} />
-        <DateBox
-          onClick={() => {
-            setOpenDate((prev) => !prev);
-            setOpenOption(false);
-          }}
-        >{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
+        <DateBox>{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
           date[0].endDate,
           "dd/MM/yyyy"
         )}`}</DateBox>
@@ -76,19 +76,19 @@ const SearchBar = () => {
           />
         )}
       </ButtonContainer>
-      <ButtonContainer>
+      <ButtonContainer
+        onClick={() => {
+          setOpenOption((p) => !p);
+          setOpenDate(false);
+        }}
+      >
         <FontAwesomeIcon icon={faPerson} />
-        <DateBox
-          onClick={() => {
-            setOpenOption((p) => !p);
-            setOpenDate(false);
-          }}
-        >
-          {" "}
-          {`${options.adult} Adult ${options.children} Children ${options.rooms} Rooms`}{" "}
+        <DateBox>
+          {`${options.adult} Adult `} <br /> {`${options.children} Children`}{" "}
+          <br /> {`${options.rooms} Rooms`}
         </DateBox>
-        {openOption && <OptionBox options={options} setOptions={setOptions} />}
       </ButtonContainer>
+      {openOption && <OptionBox options={options} setOptions={setOptions} />}
       <ButtonContainer>
         <SearchButton onClick={handleSearch}>Search</SearchButton>
       </ButtonContainer>

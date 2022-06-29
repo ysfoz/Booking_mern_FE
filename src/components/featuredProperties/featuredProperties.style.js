@@ -1,44 +1,53 @@
 import styled from "styled-components";
+import { mobile, tablet } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   width: 100%;
   max-width: 1024px;
   justify-content: space-between;
-  gap: 20px;
+
+  ${tablet({ "flex-wrap": "wrap", width: "100%" })}
 `;
 
 const Wrapper = styled.div`
-  flex: 1;
+  margin: 5px 5px;
+  ${tablet({ width: "30%" })}
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 200px;
+  ${mobile({ height: "100px" })}
 `;
 
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3px;
+  height: 60px;
+  ${mobile({ height: "50px" })}
 `;
 
 const Title = styled.span`
   font-weight: 400;
   font-size: 14px;
+  ${mobile({ "font-size": "12px" })}
 `;
 const City = styled.span`
   font-weight: 300;
   font-size: 12px;
+  text-transform: capitalize;
 `;
 
-const Price = styled.span`
+const Price = styled.h6`
   font-weight: 600;
   font-size: 14px;
+  height: 30px;
+  ${mobile({ "font-size": "12px", height: "20px" })}
 `;
 
 const RatingsContainer = styled.div`
-  font-size: 14px;
   display: flex;
   gap: 10px;
   margin-top: 10px;
@@ -60,17 +69,20 @@ const Rating = styled.button`
   :active {
     background-color: aliceblue;
   }
+
+  ${mobile({ "font-size": "12px" })}
 `;
 
 const Note = styled.span`
   font-weight: 400;
   font-size: 14px;
+  ${mobile({ "font-size": "10px" })}
 `;
 
 const Rewiew = styled.span`
   color: lightgray;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
 `;
 
 export {
