@@ -54,6 +54,7 @@ const RatingsContainer = styled.div`
 `;
 
 const Rating = styled.button`
+width: 30px;
   background-color: #003580;
   padding: 2px 4px;
   border-radius: 5px;

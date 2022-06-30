@@ -16,7 +16,7 @@ import {
 
 const FeaturedProperties = () => {
   const { data, loading } = useFetch(
-    "/hotel?featured=true&limit=6&min=40&max=600"
+    "/hotel?featured=true&limit=6&min=40&max=900"
   );
   return (
     <>
@@ -41,12 +41,12 @@ const FeaturedProperties = () => {
                 </TitleContainer>
                 <Price>Starting from {hotel?.cheapestPrice} zt</Price>
                 <RatingsContainer>
-                  {hotel?.rating && <Rating>{hotel.rating}</Rating>}
+                  {hotel?.rating && <Rating>{hotel.rating * 2}</Rating>}
                   <Rewiew>
                     {Math.ceil((Math.random() + 0.1) * 100)} rewiews
                   </Rewiew>
                 </RatingsContainer>
-                  <Note>{hotel.rating > 9 ? "Wanderful" : "Gut"}</Note>
+                  <Note>{hotel.rating * 2 > 9 ? "Wanderful" : "Gut"}</Note>
               </Wrapper>
             );
           })}

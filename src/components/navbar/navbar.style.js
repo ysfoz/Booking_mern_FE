@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { tablet,mobile,middle } from "../responsive";
+
 
 const Container = styled.div`
   height: 50px;
@@ -19,7 +19,8 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 const Logo = styled.span`
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 20px;
 `;
 const Button = styled.button`
   margin-left: 20px;

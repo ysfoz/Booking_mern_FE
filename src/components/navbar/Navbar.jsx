@@ -26,7 +26,7 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <StyledLink to={"/"}>
-          <Logo>Logo</Logo>
+          <Logo>Booking.com</Logo>
         </StyledLink>
         {user ? (
           <>
