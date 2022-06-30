@@ -113,7 +113,7 @@ const Hotel = () => {
                 </Info>
               </Wrapper>
 
-              <Button onClick={handleReserve}>
+              <Button onClick={handleReserve} noDisplay>
                 {!user ? "Login" : "Reserve or Book Now!"}
               </Button>
             </HeaderContainer>

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { mobile, small } from "../../components/responsive";
 
 const FooterContainer = styled.div`
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,8 +15,8 @@ const Container = styled.div`
   width: 100%;
   max-width: 1024px;
   margin: auto auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 30px;
+
   flex-direction: column;
 `;
 const Wrapper = styled.div`
@@ -51,28 +51,35 @@ const Button = styled.button`
   height: fit-content;
   border-radius: 5px;
   cursor: pointer;
+  ${small({ display: (props) => (props.noDisplay ? "none" : null) })}
 `;
 
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 10px;
 `;
 const ImageContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 5px;
+  margin: 10px;
 `;
 
 const Image = styled.img`
   width: 33%;
   object-fit: cover;
   height: 250px;
+  ${small({ height: "180px" })}
+  ${mobile({ height: "140px" })}
 `;
 const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  margin: 10px;
+  ${small({ flexDirection: "column" })}
 `;
 
 const DetailsContainer = styled.div`

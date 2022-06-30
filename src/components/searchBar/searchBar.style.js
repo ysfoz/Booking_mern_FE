@@ -13,9 +13,9 @@ const Wrapper = styled.div`
   border: #ffb300 solid 2px;
   padding: 5px;
   position: absolute;
-  bottom: -25px;
+  bottom: -65px;
   ${middle({ "max-width": "94%" })}
-  ${mobile({ bottom: "-33px" })}
+  ${tablet({ bottom: "-43px" })}
 `;
 const ButtonContainer = styled.div`
   color: lightgray;
@@ -24,27 +24,26 @@ const ButtonContainer = styled.div`
   flex-direction: column;
 `;
 const City = styled.input`
-  width: 70px;
+  width: 120px;
   margin-left: 10px;
   border: none;
   padding: 4px;
   text-align: center;
-  ${tablet({ fontSize: "10px" })}
-  ${mobile({ fontSize: "10px" })}
+  ${tablet({ fontSize: "10px","width":"70px" })}
 `;
 const DateBox = styled.span`
   color: black;
   color: lightgray;
   margin-left: 10px;
   cursor: pointer;
-  ${tablet({ fontSize: "8px" })}
+  ${tablet({ fontSize: "10px" })}
 `;
 
 const SearchButton = styled.button`
   border: none;
   background-color: #0071c2;
   color: white;
-  padding: 6px;
+  padding: 10px 16px;
   border-radius: 2px;
   ${mobile({ padding: "6px 3px", "font-size": "10px" })}
 `;
