@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { mobile, small } from "../../components/responsive";
+import { mobile, small, tablet } from "../../components/responsive";
 
 const FooterContainer = styled.div`
   display: flex;
@@ -123,26 +123,30 @@ const SliderContainer = styled.div`
   justify-content: center;
 `;
 const SliderWrapper = styled.div`
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  max-height: 90%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  ${mobile({ width: "90%", "max-height": "60%" })}
 `;
 
 const ArrowIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
   font-size: 40px;
   color: white;
+  ${tablet({ "font-size": "24px" })}
 `;
 
 const CloseIcon = styled(FontAwesomeIcon)`
-  position: fixed;
-  top: 80px;
-  right: 150px;
+  position: absolute;
+  top: 10px;
+  right: 6%;
   font-size: 40px;
   color: white;
   cursor: pointer;
+  ${tablet({ "font-size": "24px" })}
 `;
 
 export {

@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import { mobile, small } from "../responsive";
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   width: 90%;
+  ${mobile({ "flex-direction": "column" })}
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -13,6 +15,7 @@ const Wrapper = styled.div`
 const Title = styled.div`
   font-weight: ${(props) => props.weight};
   font-size: ${(props) => props.size};
+  ${small({ "font-size": "12px" })}
 `;
 const InputContainer = styled.div`
   display: flex;

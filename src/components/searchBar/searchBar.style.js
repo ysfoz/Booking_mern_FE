@@ -50,10 +50,11 @@ const SearchButton = styled.button`
 
 const StyledDateRange = styled(DateRange)`
   position: absolute;
-  top: 40px;
-  left: 0;
+  top: 80px;
+  left: 25%;
   z-index: 2;
-  ${mobile({ left: "-110px" })}
+  ${mobile({ "left": "2%" })}
+  ${tablet({ "top":"60px" })}
 `;
 
 export {

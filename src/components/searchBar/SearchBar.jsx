@@ -66,16 +66,15 @@ const SearchBar = () => {
           date[0].endDate,
           "dd/MM/yyyy"
         )}`}</DateBox>
+      </ButtonContainer>
         {openDate && (
           <StyledDateRange
             editableDateInputs={true}
             onChange={(item) => setDate([item.selection])}
             moveRangeOnFirstSelection={false}
             ranges={date}
-            className={"dateRange"}
           />
         )}
-      </ButtonContainer>
       <ButtonContainer
         onClick={() => {
           setOpenOption((p) => !p);

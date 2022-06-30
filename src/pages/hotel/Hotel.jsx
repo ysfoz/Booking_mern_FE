@@ -120,11 +120,11 @@ const Hotel = () => {
             <ImageContainer>
               {open && (
                 <SliderContainer>
+                  <SliderWrapper>
                   <CloseIcon
                     icon={faCircleXmark}
                     onClick={() => setOpen(false)}
                   />
-                  <SliderWrapper>
                     <ArrowIcon
                       icon={faCircleArrowLeft}
                       onClick={() => handleChange("l")}

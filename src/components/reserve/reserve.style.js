@@ -12,11 +12,12 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
 `;
 const Wrapper = styled.div`
   padding: 10px 10px 20px 10px;
-  width: 50%;
-  height: 70%;
+  width: 80%;
+  height: fit-content;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -24,6 +25,7 @@ const Wrapper = styled.div`
   position: relative;
   flex-direction: column;
   overflow-y: scroll;
+  border-radius: 10px;
 `;
 
 const CloseIcon = styled(FontAwesomeIcon)`
