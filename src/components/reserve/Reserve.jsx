@@ -40,7 +40,7 @@ const Reserve = ({ setOpenModal, id, days }) => {
       await Promise.all(
         selectedRooms.map((roomNumberId) => {
           axios
-            .put(`/room/availability/${roomNumberId}`, {
+            .put(`http://localhost:5000/api/room/availability/${roomNumberId}`, {
               date: selectedDays,
             })
             .then((res) => {

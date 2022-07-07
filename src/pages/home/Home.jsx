@@ -38,7 +38,7 @@ const Home = () => {
         <Title>Browse by property type</Title>
         <PropertyList />
         <Title>Homes guests love</Title>
-        {/* <FeaturedProperties /> */}
+        <FeaturedProperties />
         <MailList />
         <Footer />
       </ListContainer>

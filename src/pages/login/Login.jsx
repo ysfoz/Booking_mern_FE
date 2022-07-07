@@ -26,7 +26,7 @@ const Login = () => {
   const handleClick = async (values) => {
     dispatch({ type: "START" });
     try {
-      const res = await axios.post("/auth/login", values);
+      const res = await axios.post("http://localhost:5000/api/auth/login", values);
       dispatch({ type: "LOGIN", payload: res?.data });
       navigate("/");
     } catch (error) {
