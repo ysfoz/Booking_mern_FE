@@ -19,7 +19,7 @@ const Home = () => {
       setTimeout(() => {
         setMessage("");
       }, 10000);
-  }, []);
+  }, [message]);
 
   return (
     <Container>

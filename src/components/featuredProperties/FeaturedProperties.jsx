@@ -41,12 +41,12 @@ const FeaturedProperties = () => {
                 </TitleContainer>
                 <Price>Starting from {hotel?.cheapestPrice} zt</Price>
                 <RatingsContainer>
-                  {hotel?.rating && <Rating>{hotel.rating * 2}</Rating>}
+                  {hotel?.rating && <Rating>{hotel?.rating * 2}</Rating>}
                   <Rewiew>
                     {Math.ceil((Math.random() + 0.1) * 100)} rewiews
                   </Rewiew>
                 </RatingsContainer>
-                  <Note>{hotel.rating * 2 > 9 ? "Wanderful" : "Gut"}</Note>
+                  <Note>{hotel?.rating * 2 > 9 ? "Wanderful" : "Gut"}</Note>
               </Wrapper>
             );
           })}
