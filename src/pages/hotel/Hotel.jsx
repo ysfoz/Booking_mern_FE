@@ -50,7 +50,10 @@ const Hotel = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const { data, loading } = useFetch(`/hotel/find/${id}`);
+
+  
   const { date, options } = useContext(SearchContext);
+  
   const navigate = useNavigate();
 
   const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
