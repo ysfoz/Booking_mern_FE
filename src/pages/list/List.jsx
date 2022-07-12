@@ -1,5 +1,4 @@
 import { useContext } from "react";
-
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import { Container, Wrapper } from "./list.style";
@@ -11,7 +10,6 @@ import { SearchContext } from "../../context/SearchContext";
 
 const List = () => {
   const { city, min, max } = useContext(SearchContext);
-
   const { data, loading } = useFetch(
     `/hotel?city=${city}&min=${min || 0}&max=${max || 999}`
   );

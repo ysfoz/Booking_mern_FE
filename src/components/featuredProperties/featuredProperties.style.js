@@ -13,12 +13,17 @@ const Container = styled.div`
 const Wrapper = styled.div`
   margin: 5px 5px;
   ${tablet({ width: "30%" })}
+  
 `;
 
 const Image = styled.img`
   width: 100%;
   height: 200px;
   ${mobile({ height: "100px" })}
+  :hover{
+    width: 101%;
+    height: 202px;
+  }
 `;
 
 const TitleContainer = styled.div`

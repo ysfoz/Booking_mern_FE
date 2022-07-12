@@ -157,12 +157,12 @@ const Hotel = () => {
               <PriceContainer>
                 <Title
                   small
-                >{`Perfect for a ${days}-nights stay and ${options.rooms} rooms!`}</Title>
+                >{`Perfect for a ${days}-nights stay and ${options?.rooms} rooms!`}</Title>
                 <Detail>
-                  {`Located in the real heart of ${data.city}, this propperty has an excellent location score of ${data.rating}`}
+                  {`Located in the real heart of ${data?.city}, this propperty has an excellent location score of ${data?.rating}`}
                 </Detail>
                 <PriceWrapper>
-                  <Price>${days * data?.cheapestPrice * options.rooms}</Price>
+                  <Price>${days * data?.cheapestPrice * options?.rooms}</Price>
                   <PriceDetail>{`( ${days} nights )`}</PriceDetail>
                 </PriceWrapper>
                 <Button onClick={handleReserve}>
