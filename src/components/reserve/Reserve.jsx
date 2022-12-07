@@ -40,7 +40,7 @@ const Reserve = ({ setOpenModal, id, days }) => {
       await Promise.all(
         selectedRooms.map((roomNumberId) => {
           axios
-            .put(`http://localhost:5000/api/room/availability/${roomNumberId}`, {
+            .put(`https://booking-api-l8x3.onrender.com/api/room/availability/${roomNumberId}`, {
               date: selectedDays,
             })
             .then((res) => {

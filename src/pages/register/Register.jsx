@@ -24,7 +24,7 @@ const Register = () => {
   const handleClick = async (values) => {
     dispatch({ type: "START" });
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", values);
+      const res = await axios.post("https://booking-api-l8x3.onrender.com/api/auth/register", values);
       dispatch({ type: "REGISTER", payload: res?.data });
       navigate("/login");
     } catch (error) {
